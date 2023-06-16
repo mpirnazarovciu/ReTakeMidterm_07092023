@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Re-Take Midterm exam 16/06/2023</title>
+</head>
+<body>
+<h1 style="text-align: center;">Vending machine<br>
+</h1>
+<hr style="width: 100%; height: 2px;">
+Implement a system to manage a dispenser selling canned beverages
+(using <span style="font-weight: bold;">Java Collections</span>). The
+system must meet the following
+requirements.
+<h2>R1: Beverages</h2>
+The vending machine can distribute several types of beverages. Each
+beverage is characterized by its unique <span
+ style="font-style: italic;">name</span> and the selling <span
+ style="font-style: italic;">price.</span> For instance:<br>
+<br>
+<table style="text-align: left;" border="1" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold;">Beverage<br>
+name<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">Selling<br>
+price</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Coke<br>
+      </td>
+      <td style="vertical-align: top;">0.50<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Water<br>
+      </td>
+      <td style="vertical-align: top;">0.30<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Beer<br>
+      </td>
+      <td style="vertical-align: top;">1.00<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+Method <span style="font-weight: bold;">addBeverage()</span> of class <span
+ style="font-weight: bold;">VendingMachine</span> let the administrator
+to add the description of a new beverage. To obtain the price of a
+beverage, the method <span style="font-weight: bold;">getPrice()</span>
+is provided. If a price is requested for a beverage name that does not
+exist, the method returns an error code (e.g., -1.0).<span
+ style="font-weight: bold;"></span><br>
+<h2>R2: Payment cards<br>
+</h2>
+The vending machine works by means of payment cards. Each card is
+characterized by a unique <span style="font-style: italic;">ID</span>
+(integer number) and the available <span style="font-style: italic;">credit.</span>
+For instance:<br>
+<br>
+<table border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold;">Card ID<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">Credit<br>
+      </td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>5.5</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <td>99</td>
+      <td>0.75</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+Cards are recharged through the method <span style="font-weight: bold;">rechargeCard()</span>
+of class <span style="font-weight: bold;">VendingMachine.</span> If a
+non-existing ID is provided a new card is created, otherwise the
+existing card is recharged. Further, it is possible to query the
+available credit of a given card
+with method <span style="font-weight: bold;">getCredit()</span>. If a
+non-existing card ID is queried, the
+method returns an error code (e.g., -1.0).<br>
+<h2>R3: Machine refill</h2>
+The vending machine is made by 4 columns, each containing cans of a
+particular type of beverage. Each column is characterized by the type
+of beverage and the number of cans currently available. The same
+beverage can be present in multiple columns (but each column contains
+only one type of cans). At start-up columns are empty. When the machine
+is refilled, each column is assigned with a beverage type and the
+quantity of available cans. To this aim method <span
+ style="font-weight: bold;">refillColumn()</span> is provided. Columns
+are numbered starting at 1. For instance:<br>
+<br>
+<table border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold;">Column<br>
+number<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">Beverage<br>
+name<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">Number of <br>
+cans<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">1<br>
+      </td>
+      <td>Coke </td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">2<br>
+      </td>
+      <td>Beer </td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">3<br>
+      </td>
+      <td>Coke </td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">4<br>
+      </td>
+      <td>Water </td>
+      <td>20</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+Given the name of a beverage (e.g., "Coke") it is possible to obtain
+the total number of available cans for a given beverage by means of
+method <span style="font-weight: bold;">availableCans().</span> The
+method counts all columns containing cans of the given type of beverage. If doesn't exist, return -1.<br>
+<h2>R4: Selling</h2>
+The vending machine sells a product by specifying the beverage name and
+the payment card ID in method <span style="font-weight: bold;">sell()</span>.
+The method returns the colum where the can was picked from. If codes
+are invalid (either beverage or card), the beverage ran out, or credit
+on payment card is not enough to buy the requested item, an error code
+is returned (e.g., -1). On normal behavior, the machine decrements the
+credit on payment card and the quantity of available cans for the
+selected column. Note that the machine selects the first column with
+available cans of the requested type.<span style="font-weight: bold;"><br>
+</span>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+</body>
+</html>
